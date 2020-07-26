@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>back lighthouse.jpg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>white back.jpg</file>
+  </qresource>
+</RCC>

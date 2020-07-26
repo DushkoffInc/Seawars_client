@@ -1,14 +1,6 @@
-from getpass import getpass
-import requests
+import logging
 
 
+logging.basicConfig(format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+logging.warning('Admin logged out')
 
-
-payload = {'name': 'n', 'password': '1234'}
-
-# r = requests.get('http://localhost:8080/hello', params=payload)
-r = requests.get('http://localhost:8080/hello')
-
-
-
-print(r)
