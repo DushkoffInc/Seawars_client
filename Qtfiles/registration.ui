@@ -6,14 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>469</width>
-    <height>437</height>
+    <width>573</width>
+    <height>559</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Форма регистрации</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="4" column="0">
+    <widget class="QTextBrowser" name="logsBrows"/>
+   </item>
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
@@ -95,7 +98,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="line_name">
          <property name="minimumSize">
           <size>
            <width>142</width>
@@ -153,7 +156,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="line_password">
          <property name="minimumSize">
           <size>
            <width>142</width>
@@ -214,7 +217,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_3">
+        <widget class="QLineEdit" name="line_varif_password">
          <property name="minimumSize">
           <size>
            <width>142</width>
@@ -244,7 +247,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="ok_btn">
          <property name="text">
           <string>Я с вами!</string>
          </property>
@@ -264,7 +267,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="back_btn">
          <property name="text">
           <string>Под вами!</string>
          </property>
@@ -286,6 +289,26 @@
       </layout>
      </item>
     </layout>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Logs:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="Line" name="line">
+     <property name="lineWidth">
+      <number>3</number>
+     </property>
+     <property name="midLineWidth">
+      <number>6</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
