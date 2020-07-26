@@ -1,23 +1,11 @@
-import threading
-import sys
-from registration_qt import Ui_Registration
-from PyQt5 import QtWidgets
 from login_qt import Ui_MainWindow
-import requests
-
-
-
-class RegistrationForm(Ui_Registration):
-    def __init__(self):
-        super().__init__()
-        self.ui = Ui_Registration()
-        self.ui.setupUi(self)
-
+from PyQt5 import QtWidgets
 
 class SeaWarsApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.reg_form = RegistrationForm()
         self.pushButton.clicked.connect(self.login_to_server)
         self.pushButton_2.clicked.connect(self.user_registration)
         # threading.Thread(target=self.refresh).start() # можно использовать многопоточку для независимого логирования
@@ -48,15 +36,8 @@ class SeaWarsApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def user_registration(self):
         # self.textBrowser.append('погнали регаться')
-        pass
+        self.reg_form = RegistrationForm()
+        self.hide()
+        self.reg_form.show()
 
 
-
-
-
-if __name__ == '__main__':
-
-    app = QtWidgets.QApplication(sys.argv)
-    window = SeaWarsApp()
-    window.show()
-    sys.exit(app.exec_())
