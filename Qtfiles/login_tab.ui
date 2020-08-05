@@ -77,6 +77,9 @@
      <property name="styleSheet">
       <string notr="true">background-color: rgb(51,122,183); color: black; border-radius: 4px;</string>
      </property>
+     <property name="text">
+      <string>TESTER</string>
+     </property>
      <property name="maxLength">
       <number>32766</number>
      </property>
@@ -134,7 +137,7 @@
       <string notr="true">background-color: rgb(51,122,183); color: black; border-radius: 4px;</string>
      </property>
      <property name="text">
-      <string/>
+      <string>TESTER</string>
      </property>
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>

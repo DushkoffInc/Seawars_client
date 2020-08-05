@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Qtfiles/login_tab.ui'
+# Form implementation generated from reading ui file 'Qtfiles\login_tab.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.0
 #
@@ -46,7 +46,6 @@ class Ui_MainWindow(object):
         self.lineEdit_2.setGeometry(QtCore.QRect(0, 0, 209, 30))
         self.lineEdit_2.setMinimumSize(QtCore.QSize(209, 30))
         self.lineEdit_2.setStyleSheet("background-color: rgb(51,122,183); color: black; border-radius: 4px;")
-        self.lineEdit_2.setText("")
         self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
@@ -90,7 +89,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.lineEdit.setText(_translate("MainWindow", "TESTER"))
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "Ваше имя"))
+        self.lineEdit_2.setText(_translate("MainWindow", "TESTER"))
         self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "Пароль"))
         self.pushButton.setText(_translate("MainWindow", "Вход"))
         self.pushButton_2.setText(_translate("MainWindow", "Регистрация"))
