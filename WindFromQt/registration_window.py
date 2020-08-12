@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Registration(object):
+class UiRegistration(object):
     def setupUi(self, Registration):
         Registration.setObjectName("Registration")
         Registration.resize(573, 559)

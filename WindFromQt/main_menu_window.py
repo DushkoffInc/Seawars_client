@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Main_menu_window(object):
+class UiMainMenuWindow(object):
     def setupUi(self, Main_menu_window):
         Main_menu_window.setObjectName("Main_menu_window")
         Main_menu_window.resize(436, 320)
@@ -65,6 +65,6 @@ class Ui_Main_menu_window(object):
         _translate = QtCore.QCoreApplication.translate
         Main_menu_window.setWindowTitle(_translate("Main_menu_window", "SeaWars_mainMenu"))
         self.label.setText(_translate("Main_menu_window", "Добро пожаловать, PlayerName"))
-        self.new_game_btn.setText(_translate("Main_menu_window", "New game"))
+        self.new_game_btn.setText(_translate("Main_menu_window", "Create room"))
         self.join_game_btn.setText(_translate("Main_menu_window", "Join game"))
         self.ai_game_btn.setText(_translate("Main_menu_window", "Play VS AI"))

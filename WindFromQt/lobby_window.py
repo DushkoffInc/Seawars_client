@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Qtfiles\lobbi.ui'
+# Form implementation generated from reading ui file 'QtFiles\lobbi.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.0
 #
@@ -58,6 +58,9 @@ class Ui_Lobby_menu(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem4)
+        self.refresh_btn = QtWidgets.QPushButton(Lobby_menu)
+        self.refresh_btn.setObjectName("refresh_btn")
+        self.horizontalLayout_2.addWidget(self.refresh_btn)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.join_to_game_btn = QtWidgets.QPushButton(Lobby_menu)
@@ -102,6 +105,7 @@ class Ui_Lobby_menu(object):
         Lobby_menu.setWindowTitle(_translate("Lobby_menu", "SeaWars"))
         self.label.setText(_translate("Lobby_menu", "Лобби"))
         self.user_name.setText(_translate("Lobby_menu", "TextLabel"))
+        self.refresh_btn.setText(_translate("Lobby_menu", "REFRESH"))
         self.join_to_game_btn.setText(_translate("Lobby_menu", "JOIN"))
         self.back_btn.setText(_translate("Lobby_menu", "BACK"))
         self.label_2.setText(_translate("Lobby_menu", "Logs:"))

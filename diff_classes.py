@@ -166,18 +166,6 @@ class Ship:
     #             print(f'Ошибка:  {ex}')
     #             print("----------")
 
-ship = Ship
-
-def game():
-    ship_size = 2
-    for i in range(2):
-        while True:
-            if check_ships_location(get_coordinat(ship_size, ship_name=i)) == 'NOK':
-                print('Проверка не пройдена!')
-                continue
-            break
-    print('Корабли успешно расставлены!')
-
 
 if __name__ == '__main__':
     nik = Player('Nik')

@@ -3,17 +3,30 @@ import json
 import json_controller
 import game_methods
 
+from time import gmtime, strftime
+import time
 
 def get_field_for_user(name, game_id):
-    # Отправляем запрос на getField.
-    get_host_field = requests.get(f'http://localhost:8080/game/getField/?name={name}&gameId={game_id}').text
+    time_now = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+    start = time.time()
+    try:
+        # Отправляем запрос на getField.
+        get_field = requests.get(f'http://localhost:8080/game/getField/?name={name}&gameId={game_id}').text
 
-    # Получаем поле с клеточками, кораблями, для расстановки.
+        # Получаем поле с клеточками, кораблями, для расстановки.
 
-    field = json.loads(get_host_field, object_hook=json_controller.JSONObject)
-    return  field
+        field = json.loads(get_field, object_hook=json_controller.JSONObject)
+        print(f'{time_now}: GET запрос __ get_field __. УСПЕШНО!')
 
-# Расставляес корабли
+        finish = time.time()
+        result = finish - start
+        print("Get Field time: " + str(result) + " seconds.")
+        return field
+    except:
+        print(f'ОШИБКА!!!')
+        print(f'{time_now}: GET запрос __ get_field __.')
+
+
 def ships_place(field):
     print(f'Имя игрока: {field.user.name}, его ID: {field.user.id}')
     for i, ship in enumerate(field.ships):
@@ -34,29 +47,40 @@ def ships_place(field):
         start_x = int(ship_coord[0][0])
         start_y = int(ship_coord[0][1])
         start_cell = game_methods.get_cell(start_x, start_y, field)
+
         # 2) Конечные
         end_x = int(ship_coord[1][0])
         end_y = int(ship_coord[1][1])
         end_cell = game_methods.get_cell(end_x, end_y, field)
+
         # Заполняем allCells
         ship.allCells = [start_cell, end_cell]
+
 
     return field
 
 def save_field(field):
-    # отправляес на сервер SaveField для игрока
-    data = json_controller.to_JSON(field)
-    url = 'http://localhost:8080/game/saveField'
-    headers = {'Content-type': 'application/json',  # Определение типа данных
-               'Accept': 'text/plain',
-               'Content-Encoding': 'utf-8'}
-    json_post = requests.post(url, data=data, headers=headers)
+    try:
+        # отправляес на сервер SaveField для игрока
+        data = json_controller.to_JSON(field)
+        url = 'http://localhost:8080/game/saveField'
+        headers = {'Content-type': 'application/json',  # Определение типа данных
+                   'Accept': 'text/plain',
+                   'Content-Encoding': 'utf-8'}
+        json_post = requests.post(url, data=data, headers=headers)
 
-    print(f'Ответ: {json_post}')
-    print(f'Статус: {json_post}')
-    print(f'Текст JSON запроса: {json_post}')
-    print(data)
+        print(f'Ответ: {json_post}')
+        # print(f'Статус: {json_post}')
+        # print(f'Текст JSON запроса: {json_post}')
 
 
-save_field(ships_place(get_field_for_user))
+    except:
+        print('ERROR!!! ')
+
+
+
+
+
+
+
 
